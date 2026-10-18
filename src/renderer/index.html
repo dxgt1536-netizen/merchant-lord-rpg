@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self' http://localhost:8787 ws://localhost:8787"
+    />
+    <title>상단(商團) - 상인의 길</title>
+    <link rel="stylesheet" href="./styles/main.css" />
+  </head>
+  <body>
+    <div id="app">
+      <div id="screen-main-menu" class="screen"></div>
+      <div id="screen-world-map" class="screen"></div>
+      <div id="screen-town" class="screen"></div>
+      <div id="screen-inventory" class="screen"></div>
+      <div id="screen-result" class="screen"></div>
+      <div id="screen-battle" class="screen battle-screen">
+        <div id="battle-root"></div>
+        <div id="battle-hud"></div>
+      </div>
+    </div>
+    <script type="module" src="./main.ts"></script>
+  </body>
+</html>

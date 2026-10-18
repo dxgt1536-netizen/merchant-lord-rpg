@@ -1,0 +1,51 @@
+{
+  "name": "merchant-lord-rpg",
+  "version": "0.1.0",
+  "description": "상인-군주 RTS RPG",
+  "main": "./out/main/index.js",
+  "author": "",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently \"npm:dev:server\" \"npm:dev:client\"",
+    "dev:client": "electron-vite dev",
+    "dev:server": "tsx watch src/server/index.ts",
+    "build": "electron-vite build",
+    "start": "electron-vite preview",
+    "typecheck": "tsc --noEmit -p tsconfig.json && tsc --noEmit -p tsconfig.node.json && tsc --noEmit -p tsconfig.server.json",
+    "dist:win": "npm run build && electron-builder --win --x64"
+  },
+  "dependencies": {
+    "phaser": "^3.80.1",
+    "socket.io": "^4.7.5",
+    "socket.io-client": "^4.7.5"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "concurrently": "^8.2.2",
+    "electron": "^32.0.0",
+    "electron-builder": "^24.13.3",
+    "electron-vite": "^2.3.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.5.4",
+    "vite": "^5.4.0"
+  },
+  "allowScripts": {
+    "electron@32.3.3": true,
+    "esbuild@0.21.5": true,
+    "esbuild@0.28.2": true
+  },
+  "build": {
+    "appId": "com.merchantlordrpg.app",
+    "productName": "MerchantLordRPG",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "out/**/*",
+      "package.json"
+    ],
+    "win": {
+      "target": "portable"
+    }
+  }
+}
